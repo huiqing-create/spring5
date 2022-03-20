@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--    注入方式使用的是set注入-->
+
+    <bean id="emp" class="huiqing.spring5.Emp">
+
+        <!-- 普通变量           -->
+        <property name="ename" value="张迪"></property>
+        <property name="gender" value="男"></property>
+
+        <!--                引用类型的变量-->
+        <!--        property里面写bean，bean里面在写property-->
+        <property name="dept">
+            <bean id="dept" class="huiqing.spring5.Dept">
+                <property name="dname" value="安保部"></property>
+            </bean>
+        </property>
+
+    </bean>
+</beans>

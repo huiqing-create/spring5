@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="emp" class="huiqing.spring5.Emp">
+        <property name="ename" value="张慧庆"></property>
+        <property name="gender" value="男"></property>
+        <!--                注意：这种用.的方式赋值时，Emp类中一定要有dept属性的get方法不然无法获得dept属性，这里会报错-->
+        <property name="dept" ref="dept"></property><!--刚开始这一句忘写了，找了好久。。。。。-->
+        <property name="dept.dname" value="技术部"></property>
+    </bean>
+    <bean id="dept" class="huiqing.spring5.Dept"></bean>
+
+</beans>

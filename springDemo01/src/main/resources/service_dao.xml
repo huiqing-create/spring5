@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--注入外部bean其实就是，这个类里面有一个属性是其他类的 引用类型变量-->
+
+    <!--        1.创建service 和 dao的对象-->
+    <bean name="userService" class="huiqing.spring5.service.UserService">
+        <property name="userDao" ref="userDaoImpl"></property><!--注意这里用的不是value，而是ref。这里的ref值要与下面哪个bean中的id对应-->
+    </bean>
+    <bean id="userDaoImpl" class="huiqing.spring5.dao.UserDaoImpl"></bean>
+</beans>

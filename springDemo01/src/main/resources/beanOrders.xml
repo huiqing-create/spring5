@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="orders" class="huiqing.spring5.Orders">
+<!--        有参构造注入属性，属性不写全下面会报错（就下面两行）-->
+        <constructor-arg name="oname" value="电脑"></constructor-arg>
+<!--        <constructor-arg name="oaddress" value="china"></constructor-arg>-->
+        <constructor-arg name="oaddress" >
+            <null></null> <!--属性标签内部加上这个null标签-->
+        </constructor-arg>
+    </bean>
+</beans>

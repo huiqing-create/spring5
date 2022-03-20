@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="student" class="huiqing.spring5.collection.Student">
+        <!--        数组类型属性注入-->
+        <property name="course">
+            <array>
+                <value>java课程</value>
+                <value>数据库课程</value>
+            </array>
+        </property>
+        <!--        list类型属性注入-->
+        <property name="list">
+            <list>
+                <value>张三</value>
+                <value>小张</value>
+            </list>
+        </property>
+        <!--        map类型属性注入-->
+        <property name="map">
+            <map>
+                <entry key="JAVA" value="java"></entry>
+                <entry key="C" value="c"></entry>
+            </map>
+        </property>
+        <!--        set类型属性注入-->
+        <property name="set">
+            <set>
+                <value>Mysql</value>
+                <value>Redis</value>
+            </set>
+        </property>
+        <!--    在集合里面设置对象类型值,这是个对象类型的属性，所以还是先写在Student类的property标签里面,之后用外部bean ref标签引入-->
+        <property name="courseList">
+            <list>
+                <ref bean="course1"></ref>
+                <ref bean="course2"></ref>
+            </list>
+        </property>
+    </bean>
+    <!--    创建多个course对象-->
+    <bean id="course1" class="huiqing.spring5.collection.Course">
+        <property name="cname" value="大学英语"></property>
+    </bean>
+    <bean id="course2" class="huiqing.spring5.collection.Course">
+        <property name="cname" value="大学物理"></property>
+    </bean>
+
+
+</beans>

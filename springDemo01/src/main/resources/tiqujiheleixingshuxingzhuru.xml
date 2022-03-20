@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!--    1.提取list集合类型属性注入-->
+    <util:list id="bookList"><!--这个id bookList对应下面 bean 中 property 的 ref 的 bookList-->
+        <value>易筋经</value>
+        <value>九阴真经</value>
+        <value>九阳神功</value>
+
+    </util:list>
+    <!--    2.提取list集合类型属性注入使用-->
+    <bean id="book" class="huiqing.spring5.collection.Book">
+        <property name="list" ref="bookList"></property>
+    </bean>
+</beans>

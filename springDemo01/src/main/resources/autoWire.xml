@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    <bean id="emp" class="huiqing.spring5.autoWire.Emp" autowire="byName"></bean>-->
+    <bean id="emp" class="huiqing.spring5.autoWire.Emp" autowire="byType"></bean>
+    <bean id="dept" class="huiqing.spring5.autoWire.Dept"></bean>
+<!--    <bean id="dept1" class="huiqing.spring5.autoWire.Dept"></bean>-->
+<!--    若使用byType自动装配，同一个类型的，只能有一个id。-->
+</beans>
